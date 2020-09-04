@@ -31,9 +31,9 @@
               <v-row>
                 <v-col>
                   <v-card>
-                    <v-img
+                    <!--v-img
                       :src="require('@/assets/images/logo.JPG')" height="300px">
-                    </v-img>
+                    </v-img-->
                     <v-card-actions>
                       <v-btn flat color="orange" @click="viewMovies">View Details</v-btn>
                     </v-card-actions>
