@@ -32,7 +32,7 @@
                 <v-col>
                   <v-card>
                     <v-img
-                      :src="require('@/assets/images/movies.jpg')" height="300px">
+                      :src="require('@/assets/images/logo.jpg')" height="300px">
                     </v-img>
                     <v-card-actions>
                       <v-btn flat color="orange" @click="viewMovies">View Details</v-btn>
