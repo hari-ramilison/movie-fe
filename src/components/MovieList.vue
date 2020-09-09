@@ -182,9 +182,8 @@
       deleteMovie(movie) {
         apiService.deleteMovie(movie.pk).then(response => {
           if (response.status === 204) {
-            alert("Movie deleted");
-            this.showMsg = 'deleted';
-            this.$router.go();
+            router.push('/movie-list/deleted/')
+            this.getMovies()
           }
         }).catch(error => {
           if (error.response.status === 401) {

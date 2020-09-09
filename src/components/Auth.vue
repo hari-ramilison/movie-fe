@@ -112,9 +112,6 @@
             this.showMsg = 'error';
           })
         }
-      },
-      clearWarningMessage(){
-        showMsg = '';
       }
     }
   }
