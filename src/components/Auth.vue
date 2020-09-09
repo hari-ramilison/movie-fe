@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md>
     <v-row align="center" justify="center">
-      <v-col cols="12" sm="12" md="8" lg="4">
+      <v-col cols="12" sm="6" md="4" lg="4">
         <v-card class="mx-auto elevation-6">
           <v-card-title>
             <span class="headline">Login</span>

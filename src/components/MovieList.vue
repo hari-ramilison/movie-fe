@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <v-main>
     <!-- Welcome title -->
     <v-container fluid>
       <v-row align="center" justify="center">
-        <v-col cols="12" sm="8" md="7" xs="6">
+        <v-col cols="12" align="center" justify="center">
           <blockquote>
             Welcome {{validUserName}}!
             <footer>
@@ -13,7 +13,7 @@
             </footer>
           </blockquote>
         </v-col>
-        <v-col cols="12" sm="8" md="7" xs="6">
+        <v-col  cols="12" md="10" lg="10" align="center" justify="center">
           <v-alert v-if="showMsg === 'new'"
                    dismissible
                    :value="true"
@@ -38,7 +38,6 @@
 
       <!-- Data table -->
       <v-row align="center" justify="center">
-        <v-col md="1"></v-col>
         <v-col cols="12" md="10" v-resize="onResize">
             <v-data-table
               :headers="headers"
@@ -53,8 +52,8 @@
                         <td align="left">{{ props.item.description }}</td>
                         <td align="left">{{ props.item.year }}</td>
                         <td align="left">{{ props.item.rating }}</td>
-                        <td><v-icon @click="updateMovie(props.item)">mdi-pencil</v-icon></td>
-                        <td><v-icon @click="deleteMovie(props.item)">mdi-delete</v-icon></td>
+                        <td align="center"><v-icon @click="updateMovie(props.item)">mdi-pencil</v-icon></td>
+                        <td align="center"><v-icon @click="deleteMovie(props.item)">mdi-delete</v-icon></td>
                       </tr>  
                     </template>
               </v-data-table>
@@ -102,11 +101,10 @@
                 </template>     
               </v-data-iterator>  
               <v-btn class="blue mt-4 white--text" @click="addNewMovie">Add Movie</v-btn>  
-        </v-col>
-        <v-col md="1"></v-col>  
+        </v-col>  
       </v-row>
     </v-container>  
-  </main>
+  </v-main>
 </template>
 
 
@@ -173,7 +171,7 @@
       addNewMovie() {
         if (localStorage.getItem("isAuthenticates")
           && JSON.parse(localStorage.getItem("isAuthenticates")) === true) {
-          router.push('movie-create');
+          router.push('/movie-create');
         } else {
           router.push("/auth");
         }

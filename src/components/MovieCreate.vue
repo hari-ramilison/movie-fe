@@ -1,10 +1,9 @@
 <template>
   <v-container grid-list-md>
     <v-row align="center" justify="center">
-      <v-col cols="12" sm="8" md="5" class="align-center">
-        <v-row class="align-center">
-          <v-col cols="12" xs="6" sm="8" md="7" class="align-center">
-
+      <v-col class="align-center">
+        <v-row class="align-center" justify="center">
+          <v-col cols="12" sm="10" md="10" lg="6" class="align-center">
             <v-alert v-if="showMsg === 'error'"
                      dismissible
                      :value="true"
@@ -14,46 +13,48 @@
             </v-alert>
           </v-col>
         </v-row>
-        <v-card class="login-card">
-          <v-card-title>
-            <span class="headline">{{pageTitle}}</span>
-          </v-card-title>
-          <v-spacer/>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="10" md="10" lg="6" class="align-center">
+            <v-card class="login-card">
+              <v-card-title>
+                <span class="headline">{{pageTitle}}</span>
+              </v-card-title>
+              <v-spacer/>
 
-          <v-card-text>
-            <v-form ref="form" lazy-validation>
-              <v-container>
+              <v-card-text>
+                <v-form ref="form" lazy-validation>
+                  <v-container>
 
-                <v-text-field
-                  v-model="movie.name"
-                  label="Name"
-                  required
-                />
-                <v-text-field
-                  v-model="movie.description"
-                  label="Description"
-                  required
-                />
-                <v-text-field
-                  v-model="movie.year"
-                  label="Year"
-                  required
-                />
-                <v-text-field
-                  v-model="movie.rating"
-                  label="Rating"
-                  required
-                />
-                
+                    <v-text-field
+                      v-model="movie.name"
+                      label="Name"
+                      required
+                    />
+                    <v-text-field
+                      v-model="movie.description"
+                      label="Description"
+                      required
+                    />
+                    <v-text-field
+                      v-model="movie.year"
+                      label="Year"
+                      required
+                    />
+                    <v-text-field
+                      v-model="movie.rating"
+                      label="Rating"
+                      required
+                    />
+                  </v-container>
+                  <v-btn v-if="!isUpdate" class="blue white--text" @click="createMovie">Save</v-btn>
+                  <v-btn v-if="isUpdate" class="blue white--text" @click="updateMovie">Update</v-btn>
+                  <v-btn class="white black--text" @click="cancelOperation">Cancel</v-btn>
 
-              </v-container>
-              <v-btn v-if="!isUpdate" class="blue white--text" @click="createMovie">Save</v-btn>
-              <v-btn v-if="isUpdate" class="blue white--text" @click="updateMovie">Update</v-btn>
-              <v-btn class="white black--text" @click="cancelOperation">Cancel</v-btn>
-
-            </v-form>
-          </v-card-text>
-        </v-card>
+                </v-form>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>  
       </v-col>
     </v-row>
   </v-container>
@@ -136,4 +137,3 @@
     width: 60%;
   }
 </style>
-

@@ -1,13 +1,15 @@
 <template>
-  <main>
-    <v-container>
-      <v-row
-        align="center"
-        justify="center"
-      >
-        <v-col>
+  <v-main>
+    <v-container fluid>
+      <v-row>
+        <v-col align="center" justify="center" cols="12">
           <blockquote>
-          Welcome {{validUserName}}
+            Welcome {{validUserName}}!
+            <footer>
+              <small>
+                <em>&mdash; Every great film should seem new every time you see it. - Roger Ebert</em>
+              </small>
+            </footer>
           </blockquote>
         </v-col>
       </v-row>
@@ -31,9 +33,9 @@
               <v-row>
                 <v-col>
                   <v-card>
-                    <!--v-img
-                      :src="require('@/assets/images/logo.JPG')" height="300px">
-                    </v-img-->
+                    <v-img
+                      :src="require('@/assets/images/customer.jpg')" height="200px">
+                    </v-img>
                     <v-card-actions>
                       <v-btn flat color="orange" @click="viewMovies">View Details</v-btn>
                     </v-card-actions>
@@ -55,7 +57,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </main>
+  </v-main>
 </template>
 
 <script>
