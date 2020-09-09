@@ -15,7 +15,7 @@
       </v-row>
     </v-container>
 
-    <v-container fluid fill-height>
+    <v-container fluid>
       <v-row
         align="center"
         justify="center"
